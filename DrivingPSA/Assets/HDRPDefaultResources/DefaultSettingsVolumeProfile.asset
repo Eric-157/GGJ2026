@@ -123,6 +123,19 @@ MonoBehaviour:
   ambientProbeDimmer:
     m_OverrideState: 1
     m_Value: 0.5
+--- !u!114 &-8406840195836729038
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: TestComponent
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Editor.Tests:UnityEditor.Rendering.HighDefinition.Tests:CustomPostProcessComponentListTest/TestComponent
+  active: 1
 --- !u!114 &-7500920598208401999
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -367,6 +380,19 @@ MonoBehaviour:
   opacity:
     m_OverrideState: 1
     m_Value: 1
+--- !u!114 &-6312184218771818658
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: TestComponent2
+  m_EditorClassIdentifier: Unity.RenderPipelines.HighDefinition.Editor.Tests:UnityEditor.Rendering.HighDefinition.Tests:CustomPostProcessComponentListTest/TestComponent2
+  active: 1
 --- !u!114 &-6106325736762284805
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1134,9 +1160,9 @@ MonoBehaviour:
   - {fileID: 1266436180577186269}
   - {fileID: 4285554330755148238}
   - {fileID: -7500920598208401999}
-  - {fileID: -7244562839536978331}
-  - {fileID: 6517952740587165149}
   - {fileID: 7776297110376283239}
+  - {fileID: -8406840195836729038}
+  - {fileID: -6312184218771818658}
 --- !u!114 &73153626739559498
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -2262,7 +2288,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 3
+    m_Value: 1
   meteringMode:
     m_OverrideState: 1
     m_Value: 0
@@ -2271,7 +2297,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 5.089069
   compensation:
     m_OverrideState: 1
     m_Value: 5
