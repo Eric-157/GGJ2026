@@ -3247,7 +3247,6 @@ GameObject:
   - component: {fileID: 8900378199058384294}
   - component: {fileID: 2715136327772360682}
   - component: {fileID: 1552574672220115410}
-  - component: {fileID: 1574409515305053778}
   m_Layer: 0
   m_Name: HoodBase (2)
   m_TagString: Untagged
@@ -3327,27 +3326,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1574409515305053778
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1201774848109457139}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1227345683686896849
 GameObject:
   m_ObjectHideFlags: 0
@@ -5874,7 +5852,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1062033550245608350}
-  - {fileID: 8618125901156827714}
+  - {fileID: 3095924099754693884}
   - {fileID: 1267391624857723817}
   - {fileID: 7914080890494327203}
   - {fileID: 1963542715103491098}
@@ -11400,6 +11378,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8618125901156827714}
+  - component: {fileID: 899065443566039167}
+  - component: {fileID: 4599118918893004876}
+  - component: {fileID: 1928573793041873876}
   m_Layer: 0
   m_Name: CenterConsoleHood
   m_TagString: Untagged
@@ -11416,15 +11397,97 @@ Transform:
   m_GameObject: {fileID: 4690125055667208948}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.024, y: 0.099, z: 0.73}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4742171689207486383}
   - {fileID: 850511008120946706}
   - {fileID: 8900378199058384294}
-  m_Father: {fileID: 8455274248061138273}
+  m_Father: {fileID: 3095924099754693884}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &899065443566039167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690125055667208948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c287f6627ca2541b90affa822b95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectTwoStateAnimate
+  speed: 1
+  startingPosition: {x: 0, y: 0, z: 0}
+  endingPosition: {x: 0, y: 0, z: 0}
+  distanceThresholdPosition: 1
+  startingRotation: {x: 0, y: 0, z: 0}
+  endingRotation: {x: 60, y: 0, z: 0}
+  distanceThresholdRotation: 15
+--- !u!114 &4599118918893004876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690125055667208948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c20e3d9f654c6c4cad40a7e83104acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Intractable
+  OnLookEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLookExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFirstClickPress:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFirstClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnyClickPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 899065443566039167}
+        m_TargetAssemblyTypeName: ObjectTwoStateAnimate, Assembly-CSharp
+        m_MethodName: ToggleInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAnyClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &1928573793041873876
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690125055667208948}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7, y: 0.6, z: 1}
+  m_Center: {x: 0, y: 0, z: -0.5}
 --- !u!1 &4721633949112238766
 GameObject:
   m_ObjectHideFlags: 0
@@ -14877,7 +14940,6 @@ GameObject:
   - component: {fileID: 850511008120946706}
   - component: {fileID: 7166112570433032228}
   - component: {fileID: 2508496544395568970}
-  - component: {fileID: 8240473831936752469}
   m_Layer: 0
   m_Name: HoodBase (1)
   m_TagString: Untagged
@@ -14957,27 +15019,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8240473831936752469
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5807652302459415315}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5836224297625047355
 GameObject:
   m_ObjectHideFlags: 0
@@ -16156,8 +16197,6 @@ MonoBehaviour:
   startingRotation: {x: -100, y: 0, z: 0}
   endingRotation: {x: 0, y: 0, z: 0}
   distanceThresholdRotation: 25
-  isInteracted: 0
-  isHeadingToEnding: 0
 --- !u!114 &3770564706587891171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16559,6 +16598,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &6268662433423448799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3095924099754693884}
+  m_Layer: 0
+  m_Name: CenterConsoleHoodParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3095924099754693884
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6268662433423448799}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.02399999, y: 0.09899998, z: 0.7299997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8618125901156827714}
+  m_Father: {fileID: 8455274248061138273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6344878689483919980
 GameObject:
   m_ObjectHideFlags: 0
@@ -17927,7 +17998,6 @@ GameObject:
   - component: {fileID: 4742171689207486383}
   - component: {fileID: 6490719425890718403}
   - component: {fileID: 694486725196246091}
-  - component: {fileID: 8901485563670400973}
   m_Layer: 0
   m_Name: HoodBase
   m_TagString: Untagged
@@ -18007,27 +18077,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8901485563670400973
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6644547864073779139}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6668393839648830803
 GameObject:
   m_ObjectHideFlags: 0
@@ -21521,8 +21570,6 @@ MonoBehaviour:
   startingRotation: {x: 0, y: 0, z: 0}
   endingRotation: {x: 0, y: 0, z: 0}
   distanceThresholdRotation: 1
-  isInteracted: 0
-  isHeadingToEnding: 0
 --- !u!114 &3260990841100901695
 MonoBehaviour:
   m_ObjectHideFlags: 0
