@@ -8,7 +8,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private bool cameraPause;
     public float cutsceneValue;
-    private float cutsceneThreshold = 10;
+    private float cutsceneThreshold = 60;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
