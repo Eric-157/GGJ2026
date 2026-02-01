@@ -24,14 +24,17 @@ public class EndSequenceManager : MonoBehaviour
     [Header("End Screens")]
     public GameObject endTitleScreen; // shown after messages finish
     public GameObject endOptionsScreen; // contains Restart/Quit buttons
+    public GameObject BlackScreen; // Basic black screen
 
     Coroutine sequenceCoroutine;
 
     void Start()
     {
+
         if (endBillboard != null) endBillboard.SetActive(false);
         if (endTitleScreen != null) endTitleScreen.SetActive(false);
         if (endOptionsScreen != null) endOptionsScreen.SetActive(false);
+        if (BlackScreen != null) BlackScreen.SetActive(false);
     }
 
     /// <summary>
@@ -63,6 +66,12 @@ public class EndSequenceManager : MonoBehaviour
 
     IEnumerator PlaySequence()
     {
+        if (BlackScreen != null)
+        {
+            BlackScreen.SetActive(true);
+            yield return new WaitForSecondsRealtime(2f);
+            BlackScreen.SetActive(false);
+        }
         // show messages using unscaled time so Time.timeScale=0 doesn't pause them
         if (messages != null && messages.Length > 0 && messageText != null)
         {
@@ -72,9 +81,24 @@ public class EndSequenceManager : MonoBehaviour
                 yield return new WaitForSecondsRealtime(messageInterval);
             }
         }
-
+        if (BlackScreen != null)
+        {
+            BlackScreen.SetActive(true);
+            yield return new WaitForSecondsRealtime(2f);
+            BlackScreen.SetActive(false);
+        }
         // messages done: show title/options
-        if (endTitleScreen != null) endTitleScreen.SetActive(true);
+        if (endTitleScreen != null)
+        {
+            endTitleScreen.SetActive(true);
+            yield return new WaitForSecondsRealtime(7f);
+        }
+        if (BlackScreen != null)
+        {
+            BlackScreen.SetActive(true);
+            yield return new WaitForSecondsRealtime(2f);
+            BlackScreen.SetActive(false);
+        }
         if (endOptionsScreen != null) endOptionsScreen.SetActive(true);
 
         // Leave CutsceneState true to keep gameplay disabled; keep Time.timeScale at 0
