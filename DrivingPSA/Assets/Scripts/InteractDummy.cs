@@ -4,12 +4,12 @@ public class InteractDummy : MonoBehaviour
 {
     new public Renderer renderer;
 
-    public void LookEnter()
+    public void StartInteraction()
     {
         renderer.material.color = Color.blue;
     }
 
-    public void LookExit()
+    public void StopInteraction()
     {
         renderer.material.color = Color.white;
     }

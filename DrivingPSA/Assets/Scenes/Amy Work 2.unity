@@ -690,6 +690,38 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!1 &488792814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 488792815}
+  m_Layer: 0
+  m_Name: Interact Dummy 1 Parent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &488792815
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488792814}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5, y: -0.95, z: -16.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 856231900}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680388775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 856231900}
+  - component: {fileID: 856231904}
   - component: {fileID: 856231903}
   - component: {fileID: 856231902}
   - component: {fileID: 856231899}
@@ -1205,11 +1238,11 @@ Transform:
   m_GameObject: {fileID: 856231897}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: -0.95, z: -16.08}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 488792815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &856231901
 BoxCollider:
@@ -1249,7 +1282,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 856231903}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: LookEnter
+        m_MethodName: StartInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1259,12 +1292,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 856231904}
+        m_TargetAssemblyTypeName: ObjectAnimate, Assembly-CSharp
+        m_MethodName: StartInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnLookExit:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 856231903}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: LookExit
+        m_MethodName: StopInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 856231904}
+        m_TargetAssemblyTypeName: ObjectAnimate, Assembly-CSharp
+        m_MethodName: StopInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1287,6 +1344,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractDummy
   renderer: {fileID: 856231898}
+--- !u!114 &856231904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856231897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c287f6627ca2541b90affa822b95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectAnimate
+  speed: 1
+  startingPosition: {x: 0, y: 0, z: 0}
+  endingPosition: {x: 0, y: 0, z: 0}
+  distanceThresholdPosition: 1
+  startingRotation: {x: 0, y: 0, z: 0}
+  endingRotation: {x: 0, y: 45, z: 0}
+  distanceThresholdRotation: 15
 --- !u!1 &1076021790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1824,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1198846443}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: LookEnter
+        m_MethodName: StartInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1763,7 +1839,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1198846443}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: LookExit
+        m_MethodName: StopInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2485,7 +2561,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1885513671}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: LookEnter
+        m_MethodName: StartInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2500,7 +2576,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1885513671}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: LookExit
+        m_MethodName: StopInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2883,7 +2959,7 @@ SceneRoots:
   - {fileID: 2017607136}
   - {fileID: 1163296614}
   - {fileID: 2051662489}
-  - {fileID: 856231900}
+  - {fileID: 488792815}
   - {fileID: 1885513668}
   - {fileID: 1198846440}
   - {fileID: 847341894}
