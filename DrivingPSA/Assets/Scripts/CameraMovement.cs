@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MainCamera : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
 
     public float movementSpeed = 20;
