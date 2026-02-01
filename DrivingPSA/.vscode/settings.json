@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "DrivingPSA.slnx"
+    "dotnet.defaultSolution": "DrivingPSA.slnx",
+    "editor.formatOnSave": true,
 }
