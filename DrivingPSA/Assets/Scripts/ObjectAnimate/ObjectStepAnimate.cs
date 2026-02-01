@@ -17,7 +17,6 @@ public class ObjectStepAnimate : MonoBehaviour
     private Vector3 currentRotation;
 
 
-
     void Update()
     {
         currentPosition = Vector3.Lerp(currentPosition, targetPosition, speed * Time.deltaTime);

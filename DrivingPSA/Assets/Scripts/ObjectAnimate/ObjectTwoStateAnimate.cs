@@ -14,8 +14,8 @@ public class ObjectTwoStateAnimate : MonoBehaviour
     public Vector3 endingRotation;
     public float distanceThresholdRotation = 1;
 
-    private bool isInteracted = false; // What's our actual, latest interaction state
-    private bool isHeadingToEnding = false; // What are we trying to do right now
+    public bool isInteracted = false; // What's our actual, latest interaction state
+    public bool isHeadingToEnding = false; // What are we trying to do right now
 
     private Vector3 currentPosition;
     private Vector3 currentRotation;
@@ -61,5 +61,10 @@ public class ObjectTwoStateAnimate : MonoBehaviour
     public void StopInteraction()
     {
         isInteracted = false;
+    }
+
+    public void ToggleInteraction()
+    {
+        isInteracted = !isInteracted;
     }
 }

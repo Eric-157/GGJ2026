@@ -54,4 +54,9 @@ public class ObjectContinuousAnimate : MonoBehaviour
     {
         isInteracted = false;
     }
+
+    public void ToggleInteraction()
+    {
+        isInteracted = !isInteracted;
+    }
 }

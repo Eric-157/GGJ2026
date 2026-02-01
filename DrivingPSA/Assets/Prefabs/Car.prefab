@@ -1489,7 +1489,6 @@ GameObject:
   - component: {fileID: 3584673135390409520}
   - component: {fileID: 8766516394974413416}
   - component: {fileID: 1435301151014042308}
-  - component: {fileID: 7895150797849690058}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1569,27 +1568,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7895150797849690058
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496275690714023557}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &515890730296533586
 GameObject:
   m_ObjectHideFlags: 0
@@ -8046,7 +8024,7 @@ Transform:
   - {fileID: 4541643520441148865}
   - {fileID: 1664891819617957281}
   - {fileID: 2771131696403642016}
-  - {fileID: 4219479825233483926}
+  - {fileID: 8012357574338937170}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3066959221902806249
@@ -16133,6 +16111,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4219479825233483926}
+  - component: {fileID: 5134682695259911289}
+  - component: {fileID: 3770564706587891171}
+  - component: {fileID: 7675151750180039946}
   m_Layer: 0
   m_Name: SunBlocker
   m_TagString: Untagged
@@ -16148,14 +16129,98 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6145311593204373250}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.76865333, y: -0, z: -0, w: 0.6396656}
-  m_LocalPosition: {x: 0.727, y: 2.927, z: -0.764}
+  m_LocalRotation: {x: -0.7660445, y: 0, z: 0, w: 0.64278764}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3584673135390409520}
-  m_Father: {fileID: 6622314289978600288}
-  m_LocalEulerAnglesHint: {x: -100.466, y: 0, z: 0}
+  m_Father: {fileID: 8012357574338937170}
+  m_LocalEulerAnglesHint: {x: -100, y: 0, z: 0}
+--- !u!114 &5134682695259911289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6145311593204373250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c287f6627ca2541b90affa822b95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectTwoStateAnimate
+  speed: 1
+  startingPosition: {x: 0, y: 0, z: 0}
+  endingPosition: {x: 0, y: 0, z: 0}
+  distanceThresholdPosition: 1
+  startingRotation: {x: -100, y: 0, z: 0}
+  endingRotation: {x: 0, y: 0, z: 0}
+  distanceThresholdRotation: 25
+  isInteracted: 0
+  isHeadingToEnding: 0
+--- !u!114 &3770564706587891171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6145311593204373250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c20e3d9f654c6c4cad40a7e83104acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Intractable
+  OnLookEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLookExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFirstClickPress:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFirstClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnyClickPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5134682695259911289}
+        m_TargetAssemblyTypeName: ObjectTwoStateAnimate, Assembly-CSharp
+        m_MethodName: ToggleInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAnyClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &7675151750180039946
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6145311593204373250}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8406072, y: 0.5182963, z: 0.07256338}
+  m_Center: {x: 0.0224, y: -0.213, z: -0.013}
 --- !u!1 &6200691108626407168
 GameObject:
   m_ObjectHideFlags: 0
@@ -16720,6 +16785,38 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!1 &6394823812176282402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8012357574338937170}
+  m_Layer: 0
+  m_Name: SunBlockerParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8012357574338937170
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6394823812176282402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.727, y: 2.927, z: -0.7639999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4219479825233483926}
+  m_Father: {fileID: 6622314289978600288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6437061535586131681
 GameObject:
   m_ObjectHideFlags: 0
@@ -21424,6 +21521,8 @@ MonoBehaviour:
   startingRotation: {x: 0, y: 0, z: 0}
   endingRotation: {x: 0, y: 0, z: 0}
   distanceThresholdRotation: 1
+  isInteracted: 0
+  isHeadingToEnding: 0
 --- !u!114 &3260990841100901695
 MonoBehaviour:
   m_ObjectHideFlags: 0
