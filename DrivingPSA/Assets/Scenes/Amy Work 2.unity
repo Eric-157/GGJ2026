@@ -1282,7 +1282,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 856231903}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: StartInteraction
+        m_MethodName: LookEnter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1309,7 +1309,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 856231903}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: StopInteraction
+        m_MethodName: LookExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1331,6 +1331,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnFirstClickPress:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFirstClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnyClickPress:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnyClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &856231903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1344,6 +1356,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractDummy
   renderer: {fileID: 856231898}
+  none: {r: 1, g: 1, b: 1, a: 1}
+  looking: {r: 0, g: 0, b: 1, a: 1}
+  firstClick: {r: 1, g: 0, b: 0, a: 1}
+  otherClick: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!114 &856231904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1824,7 +1840,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1198846443}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: StartInteraction
+        m_MethodName: LookEnter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1839,7 +1855,67 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1198846443}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: StopInteraction
+        m_MethodName: LookExit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFirstClickPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1198846443}
+        m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
+        m_MethodName: FirstClickPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnFirstClickRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1198846443}
+        m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
+        m_MethodName: FirstClickReleased
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAnyClickPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1198846443}
+        m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
+        m_MethodName: AnyClickPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAnyClickRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1198846443}
+        m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
+        m_MethodName: AnyClickReleased
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1862,6 +1938,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractDummy
   renderer: {fileID: 1198846438}
+  none: {r: 1, g: 1, b: 1, a: 1}
+  looking: {r: 0, g: 0, b: 1, a: 1}
+  firstClick: {r: 1, g: 0, b: 0, a: 1}
+  otherClick: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1207677973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,7 +2641,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1885513671}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: StartInteraction
+        m_MethodName: LookEnter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2576,7 +2656,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1885513671}
         m_TargetAssemblyTypeName: InteractDummy, Assembly-CSharp
-        m_MethodName: StopInteraction
+        m_MethodName: LookExit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2586,6 +2666,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnFirstClickPress:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFirstClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnyClickPress:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnyClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1885513671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2599,6 +2691,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractDummy
   renderer: {fileID: 1885513666}
+  none: {r: 1, g: 1, b: 1, a: 1}
+  looking: {r: 0, g: 0, b: 1, a: 1}
+  firstClick: {r: 1, g: 0, b: 0, a: 1}
+  otherClick: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
 --- !u!1 &1898865072
 GameObject:
   m_ObjectHideFlags: 0
