@@ -36,7 +36,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         //stop the player from moving the camera
         Camera camera = Camera.main;
         CameraMovement cameraMovement = camera.gameObject.GetComponent<CameraMovement>();
-        cameraMovement.allowMove = false;
+        //cameraMovement.allowMove = false;
 
         //move camera
         camera.transform.rotation = Quaternion.LookRotation(Vector3.back);

@@ -120,6 +120,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3812684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3812685}
+  m_Layer: 0
+  m_Name: Carview
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3812685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3812684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.212, y: -0.637, z: -14.342}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &21014606
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +522,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 118506972}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &147835103
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 147835104}
+  m_Layer: 0
+  m_Name: Backview
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &147835104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147835103}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.11761404, z: -0, w: 0.99305946}
+  m_LocalPosition: {x: 2.37, y: -0.83, z: -10.068}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -13.509, z: 0}
 --- !u!1001 &164146507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9490,18 +9552,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2017607134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61c0198e2c9847a468593956879bde23, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d60460347a359b46bbf0741f047c497, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SpriteSequenceSpawner
-  aliveSpriteFirst: {fileID: 21300000, guid: c2ae11276940fe14baa657835a496a0e, type: 3}
-  deadSpriteFirst: {fileID: 21300000, guid: d3bf9f8e47335b348b4352c5b46efe3f, type: 3}
-  aliveSpriteSecond: {fileID: 21300000, guid: 8c634bdb857083546bbeb8d7876bed3a, type: 3}
-  deadSpriteSecond: {fileID: 21300000, guid: face23b4ee6559d46bb4d5919d04170a, type: 3}
-  aliveSpriteThird: {fileID: 21300000, guid: 4511e2ab048cb3947bb964b83a9206ec, type: 3}
-  deadSpriteThird: {fileID: 21300000, guid: dab2799da13486f4cb0486b5d62b2e97, type: 3}
-  position1: {fileID: 570618680}
-  position2: {fileID: 1121714845}
-  timeBetweenSprites: 2
+  m_EditorClassIdentifier: Assembly-CSharp::LastMinuteFix
+  aliveSprite: {fileID: 21300000, guid: 4511e2ab048cb3947bb964b83a9206ec, type: 3}
+  deadSprite: {fileID: 21300000, guid: dab2799da13486f4cb0486b5d62b2e97, type: 3}
+  frontSpawn: {fileID: 570618680}
+  backSpawn: {fileID: 1121714845}
+  aliveDisplayTime: 0.5
+  cutsceneDelayAfterDeath: 1
+  endSequenceDelay: 3
+  autoStartDelay: 2
+  mainCamera: {fileID: 461188296}
+  playerTransform: {fileID: 147835103}
+  playerMoveSpeed: 5
+  playerRotateSpeed: 5
+  endSequenceManager: {fileID: 2017607138}
   spriteZDepth: 0
   spriteScale: {x: 1, y: 1, z: 1}
 --- !u!4 &2022689502 stripped
@@ -10140,3 +10206,5 @@ SceneRoots:
   - {fileID: 107383407}
   - {fileID: 570618680}
   - {fileID: 1121714845}
+  - {fileID: 3812685}
+  - {fileID: 147835104}
