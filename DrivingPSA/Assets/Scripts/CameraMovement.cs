@@ -16,13 +16,11 @@ public class CameraMovement : MonoBehaviour
     private float angleVertical = 0;
     private float angleHorizontal = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         var input = Mouse.current.delta.ReadValue();
@@ -33,6 +31,7 @@ public class CameraMovement : MonoBehaviour
         angleVertical = Math.Clamp(angleVertical, minVertical, maxVertical);
         angleHorizontal = Math.Clamp(angleHorizontal, minHorizontal, maxHorizontal);
 
+        // We keep track of our own angles because .Rotate and reading euler angles back for clamping is bad
         transform.localRotation = Quaternion.Euler(angleVertical, angleHorizontal, 0);
     }
 }
