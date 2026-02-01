@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectTwoStateAnimate : MonoBehaviour
+public class ObjectContinuousAnimate : MonoBehaviour
 {
     public float speed = 1;
 
@@ -20,19 +20,11 @@ public class ObjectTwoStateAnimate : MonoBehaviour
     private Vector3 currentPosition;
     private Vector3 currentRotation;
 
-
-    void Start()
-    {
-        // Make sure our starting values all are consistent
-        currentPosition = startingPosition;
-        transform.localPosition = startingPosition;
-
-        currentRotation = startingRotation;
-        transform.localRotation = Quaternion.Euler(startingRotation);
-    }
-
     void Update()
     {
+        // If no longer interacting, just pause where we are
+        if (!isInteracted) return;
+
         var targetPosition = isHeadingToEnding ? endingPosition : startingPosition;
         currentPosition = Vector3.Lerp(currentPosition, targetPosition, speed * Time.deltaTime);
         transform.localPosition = currentPosition;
@@ -46,10 +38,10 @@ public class ObjectTwoStateAnimate : MonoBehaviour
         var finishedPosition = Vector3.Distance(currentPosition, targetPosition) <= distanceThresholdPosition;
         var finishedRotation = Vector3.Distance(currentRotation, targetRotation) <= distanceThresholdRotation;
 
-        // If animation has gone far enough, we update what we're trying to do based on our current interaction state
+        // If animation has gone far enough, we flip states
         if (finishedPosition && finishedRotation)
         {
-            isHeadingToEnding = isInteracted;
+            isHeadingToEnding = !isHeadingToEnding;
         }
     }
 
