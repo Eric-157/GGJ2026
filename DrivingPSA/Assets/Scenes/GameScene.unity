@@ -2065,6 +2065,11 @@ PrefabInstance:
       propertyPath: m_RenderingLayerMask
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 691579566451989288, guid: 9b18aa2f12ce4fd4fb598096fd5baffc,
+        type: 3}
+      propertyPath: m_Name
+      value: VolumeControl
+      objectReference: {fileID: 0}
     - target: {fileID: 3039317129677195495, guid: 9b18aa2f12ce4fd4fb598096fd5baffc,
         type: 3}
       propertyPath: m_Name
