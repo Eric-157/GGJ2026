@@ -89,7 +89,7 @@ public class SpriteSequenceSpawner : MonoBehaviour
         return (null, null);
     }
 
-    IEnumerator PlaySequence(Sprite spriteAlive, Sprite spriteDead)
+    public IEnumerator PlaySequence(Sprite spriteAlive, Sprite spriteDead)
     {
         // Spawn alive sprite at position 1
         currentSprite = SpawnSpriteAt(position1.position, spriteAlive);
