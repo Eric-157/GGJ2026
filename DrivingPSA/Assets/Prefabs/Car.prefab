@@ -2647,7 +2647,6 @@ GameObject:
   - component: {fileID: 7789451027336788197}
   - component: {fileID: 1243743975884371487}
   - component: {fileID: 5991214791218145869}
-  - component: {fileID: 2237556096218994394}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2727,27 +2726,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2237556096218994394
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900526146686808328}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &926399241422559414
 GameObject:
   m_ObjectHideFlags: 0
@@ -7984,7 +7962,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7510601934071415540}
+  - {fileID: 6732481171584605990}
   - {fileID: 8289625128102342344}
   - {fileID: 8167753339106964881}
   - {fileID: 6300656404711282978}
@@ -11369,6 +11347,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4537362793923868757
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6732481171584605990}
+  m_Layer: 0
+  m_Name: PhoneParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6732481171584605990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4537362793923868757}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7510601934071415540}
+  m_Father: {fileID: 6622314289978600288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4690125055667208948
 GameObject:
   m_ObjectHideFlags: 0
@@ -11721,6 +11731,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7510601934071415540}
+  - component: {fileID: 684556280579682124}
+  - component: {fileID: 5141735457428116378}
+  - component: {fileID: 6379426018176095433}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -11737,15 +11750,97 @@ Transform:
   m_GameObject: {fileID: 4789831462589806562}
   serializedVersion: 2
   m_LocalRotation: {x: -0.49817017, y: 0.35899705, z: 0.23761493, w: 0.7526531}
-  m_LocalPosition: {x: -0.24, y: 0.8, z: 0.04}
+  m_LocalPosition: {x: -0.24000001, y: 0.79999995, z: 0.042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7789451027336788197}
   - {fileID: 8184116007661279371}
   - {fileID: 2191452437896222496}
-  m_Father: {fileID: 6622314289978600288}
+  m_Father: {fileID: 6732481171584605990}
   m_LocalEulerAnglesHint: {x: -67, y: 51, z: 0}
+--- !u!114 &684556280579682124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789831462589806562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c287f6627ca2541b90affa822b95ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectTwoStateAnimate
+  speed: 1
+  startingPosition: {x: -0.24, y: 0.8, z: 0.042}
+  endingPosition: {x: 0.73, y: 2.05, z: 0.1}
+  distanceThresholdPosition: 999999
+  startingRotation: {x: -67, y: 51, z: 0}
+  endingRotation: {x: 0, y: 0, z: 0}
+  distanceThresholdRotation: 15
+--- !u!114 &5141735457428116378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789831462589806562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c20e3d9f654c6c4cad40a7e83104acb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Intractable
+  OnLookEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLookExit:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFirstClickPress:
+    m_PersistentCalls:
+      m_Calls: []
+  OnFirstClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
+  OnAnyClickPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 684556280579682124}
+        m_TargetAssemblyTypeName: ObjectTwoStateAnimate, Assembly-CSharp
+        m_MethodName: ToggleInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnAnyClickRelease:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!65 &6379426018176095433
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4789831462589806562}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2, y: 0.3, z: 0.1}
+  m_Center: {x: -0.0447, y: 0.1201, z: -0.033}
 --- !u!1 &4902139154857489930
 GameObject:
   m_ObjectHideFlags: 0
@@ -19597,7 +19692,6 @@ GameObject:
   - component: {fileID: 8184116007661279371}
   - component: {fileID: 8679465961767025091}
   - component: {fileID: 2043032767335691578}
-  - component: {fileID: 6652409956717123700}
   m_Layer: 0
   m_Name: Screen
   m_TagString: Untagged
@@ -19677,27 +19771,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6652409956717123700
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7163769260974653906}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7300174405372188420
 GameObject:
   m_ObjectHideFlags: 0
@@ -21584,34 +21657,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Intractable
   OnLookEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3109759380918824344}
-        m_TargetAssemblyTypeName: ObjectTwoStateAnimate, Assembly-CSharp
-        m_MethodName: StartInteraction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnLookExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3109759380918824344}
-        m_TargetAssemblyTypeName: ObjectTwoStateAnimate, Assembly-CSharp
-        m_MethodName: StopInteraction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   OnFirstClickPress:
     m_PersistentCalls:
       m_Calls: []
@@ -21620,7 +21669,19 @@ MonoBehaviour:
       m_Calls: []
   OnAnyClickPress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3109759380918824344}
+        m_TargetAssemblyTypeName: ObjectTwoStateAnimate, Assembly-CSharp
+        m_MethodName: ToggleInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAnyClickRelease:
     m_PersistentCalls:
       m_Calls: []

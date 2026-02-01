@@ -672,8 +672,8 @@ MonoBehaviour:
   movementSpeed: 20
   minHorizontal: -90
   maxHorizontal: 90
-  minVertical: -60
-  maxVertical: 45
+  minVertical: -45
+  maxVertical: 60
 --- !u!114 &461188300
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,8 +10,8 @@ public class CameraMovement : MonoBehaviour
     public float minHorizontal = -90;
     public float maxHorizontal = 90;
 
-    public float minVertical = -60;
-    public float maxVertical = 45;
+    public float minVertical = -45;
+    public float maxVertical = 60;
 
     private float angleVertical = 0;
     private float angleHorizontal = 0;
