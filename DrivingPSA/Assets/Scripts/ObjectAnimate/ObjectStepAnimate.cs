@@ -10,6 +10,10 @@ public class ObjectStepAnimate : MonoBehaviour
     [Header("Rotation")]
     public Vector3 stepRotation;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip audioClipStart;
+
     private Vector3 targetPosition;
     private Vector3 targetRotation;
 
@@ -31,5 +35,10 @@ public class ObjectStepAnimate : MonoBehaviour
     {
         targetPosition += stepPosition;
         targetRotation += stepRotation;
+
+        if (audioSource != null && audioClipStart != null)
+        {
+            audioSource.PlayOneShot(audioClipStart);
+        }
     }
 }

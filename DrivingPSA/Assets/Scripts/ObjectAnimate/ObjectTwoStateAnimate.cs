@@ -14,6 +14,11 @@ public class ObjectTwoStateAnimate : MonoBehaviour
     public Vector3 endingRotation;
     public float distanceThresholdRotation = 1;
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip audioClipStart;
+    public AudioClip audioClipEnd;
+
     private bool isInteracted = false; // What's our actual, latest interaction state
     private bool isHeadingToEnding = false; // What are we trying to do right now
 
@@ -66,5 +71,17 @@ public class ObjectTwoStateAnimate : MonoBehaviour
     public void ToggleInteraction()
     {
         isInteracted = !isInteracted;
+
+        if (audioSource == null) return;
+
+        if (isInteracted && audioClipStart != null)
+        {
+            audioSource.PlayOneShot(audioClipStart);
+        }
+
+        if (!isInteracted && audioClipEnd != null)
+        {
+            audioSource.PlayOneShot(audioClipEnd);
+        }
     }
 }
