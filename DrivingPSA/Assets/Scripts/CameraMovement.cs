@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class CameraMovement : MonoBehaviour
 {
 
-    public bool allowMove;
+    public bool allowMove = true;
     public float movementSpeed = 20;
 
     public float minHorizontal = -90;
