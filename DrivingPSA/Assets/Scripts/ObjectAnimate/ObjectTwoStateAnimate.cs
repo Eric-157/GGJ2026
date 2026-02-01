@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectAnimate : MonoBehaviour
+public class ObjectTwoStateAnimate : MonoBehaviour
 {
     public float speed = 1;
 

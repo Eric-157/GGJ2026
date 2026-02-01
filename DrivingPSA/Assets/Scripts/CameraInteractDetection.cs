@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CameraLookDetection : MonoBehaviour
+public class CameraInteractDetection : MonoBehaviour
 {
     new public Camera camera;
     public LayerMask layerMask;
