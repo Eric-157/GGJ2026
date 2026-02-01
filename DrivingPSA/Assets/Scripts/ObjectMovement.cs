@@ -6,12 +6,12 @@ public class ObjectMovement : MonoBehaviour
     public float speed = 5f;
 
     [Tooltip("Direction of movement in world space. Default moves along -Z.")]
-    public Vector3 moveDirection = Vector3.back;
+    public Vector3 moveDirection = Vector3.forward;
 
     void Start()
     {
         // normalize direction to ensure consistent speed
-        if (moveDirection == Vector3.zero) moveDirection = Vector3.back;
+        if (moveDirection == Vector3.zero) moveDirection = Vector3.forward;
         moveDirection = moveDirection.normalized;
     }
 
@@ -26,11 +26,10 @@ public class ObjectMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other == null) return;
-
         // Destroy this object if it collides with the trigger object named "ObjectKiller".
         if (other.gameObject.name == "ObjectKiller" || other.CompareTag("ObjectKiller"))
         {
+            Debug.Log("ObjectMovement: Collided with ObjectKiller, destroying self.");
             Destroy(gameObject);
         }
     }

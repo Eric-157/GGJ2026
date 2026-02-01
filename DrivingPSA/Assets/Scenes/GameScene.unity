@@ -1333,7 +1333,6 @@ GameObject:
   - component: {fileID: 619682739}
   - component: {fileID: 619682743}
   - component: {fileID: 619682742}
-  - component: {fileID: 619682741}
   - component: {fileID: 619682740}
   m_Layer: 0
   m_Name: RailSpawner
@@ -1351,7 +1350,7 @@ Transform:
   m_GameObject: {fileID: 619682738}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.61, y: 0.2221, z: -10.45}
+  m_LocalPosition: {x: 11.61, y: 0.55999994, z: -10.45}
   m_LocalScale: {x: 0.30681, y: 0.5281669, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1369,32 +1368,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7583e1aba389d4e4b9ada0a7a84697ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawning
-  spawnPrefab: {fileID: 0}
+  spawnPrefab: {fileID: 3583463070568167963, guid: c1fbb3df79e28b84cb35a57596d98897,
+    type: 3}
   xRange: 0
-  useTimer: 1
+  useTimer: 0
   spawnInterval: 2
-  spawnDistanceZ: 5
---- !u!65 &619682741
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619682738}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  spawnDistanceZ: 6
+  spawnLayer: -1
 --- !u!23 &619682742
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1719,7 +1699,7 @@ GameObject:
   - component: {fileID: 725334386}
   - component: {fileID: 725334385}
   - component: {fileID: 725334384}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: YellowLineSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,11 +1733,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7583e1aba389d4e4b9ada0a7a84697ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawning
-  spawnPrefab: {fileID: 0}
+  spawnPrefab: {fileID: 8131181704449502310, guid: 52d0813880e48204e94bd16e7225431c,
+    type: 3}
   xRange: 0
-  useTimer: 1
+  useTimer: 0
   spawnInterval: 2
-  spawnDistanceZ: 5
+  spawnDistanceZ: 7
+  spawnLayer: -1
 --- !u!65 &725334385
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2397,9 +2379,8 @@ GameObject:
   - component: {fileID: 1029919701}
   - component: {fileID: 1029919705}
   - component: {fileID: 1029919704}
-  - component: {fileID: 1029919703}
   - component: {fileID: 1029919702}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RailSpawner (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2415,7 +2396,7 @@ Transform:
   m_GameObject: {fileID: 1029919700}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.655, y: 0.2221, z: -10.45}
+  m_LocalPosition: {x: -12.655, y: 0.56, z: -10.45}
   m_LocalScale: {x: 0.30681, y: 0.5281669, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2433,32 +2414,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7583e1aba389d4e4b9ada0a7a84697ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawning
-  spawnPrefab: {fileID: 0}
+  spawnPrefab: {fileID: 3583463070568167963, guid: c1fbb3df79e28b84cb35a57596d98897,
+    type: 3}
   xRange: 0
-  useTimer: 1
+  useTimer: 0
   spawnInterval: 2
-  spawnDistanceZ: 5
---- !u!65 &1029919703
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029919700}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  spawnDistanceZ: 6
+  spawnLayer: -1
 --- !u!23 &1029919704
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2668,7 +2630,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4247728266887191863, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 3438255294777235301, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 1156900360804414286, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 1500212587673992410, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 8576388270903298042, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 6708477412392444896, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 1107399440630096318, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 3435773190122619217, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 6342698965576414880, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 4786494047718670390, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 3687201383439237071, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 7241582656697782813, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 1153127234937509879, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 6889490756666457786, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 1563554488701432941, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 1586492186413027922, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 3176226811667629433, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 8480626131906940003, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
+    - {fileID: 6923300535579906803, guid: 9b18aa2f12ce4fd4fb598096fd5baffc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2684,9 +2665,8 @@ GameObject:
   - component: {fileID: 1060511165}
   - component: {fileID: 1060511169}
   - component: {fileID: 1060511168}
-  - component: {fileID: 1060511167}
   - component: {fileID: 1060511166}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TreeSpawner (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2720,32 +2700,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7583e1aba389d4e4b9ada0a7a84697ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawning
-  spawnPrefab: {fileID: 0}
-  xRange: 0
+  spawnPrefab: {fileID: 7165565223213346986, guid: 56ca7ba47f7995e43a2c16101e4cca57,
+    type: 3}
+  xRange: 10
   useTimer: 1
-  spawnInterval: 2
+  spawnInterval: 0.5
   spawnDistanceZ: 5
---- !u!65 &1060511167
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060511164}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  spawnLayer: -1
 --- !u!23 &1060511168
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3843,9 +3804,8 @@ GameObject:
   - component: {fileID: 1626952963}
   - component: {fileID: 1626952967}
   - component: {fileID: 1626952966}
-  - component: {fileID: 1626952965}
   - component: {fileID: 1626952964}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TreeSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3879,32 +3839,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7583e1aba389d4e4b9ada0a7a84697ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObjectSpawning
-  spawnPrefab: {fileID: 0}
-  xRange: 0
+  spawnPrefab: {fileID: 7165565223213346986, guid: 56ca7ba47f7995e43a2c16101e4cca57,
+    type: 3}
+  xRange: 10
   useTimer: 1
-  spawnInterval: 2
+  spawnInterval: 0.5
   spawnDistanceZ: 5
---- !u!65 &1626952965
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1626952962}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  spawnLayer: -1
 --- !u!23 &1626952966
 MeshRenderer:
   m_ObjectHideFlags: 0

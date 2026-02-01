@@ -20,6 +20,10 @@ public class ObjectSpawning : MonoBehaviour
     // internal state
     float timer = 0f;
     GameObject lastSpawned;
+    [Tooltip("Optional: set to a layer index (0-31) to place spawned objects on. If set, spawned objects on this layer will ignore collisions with each other.")]
+    public int spawnLayer = -1;
+
+    bool ignoredLayerCollisionSet = false;
 
     void Start()
     {
@@ -75,5 +79,35 @@ public class ObjectSpawning : MonoBehaviour
         float offsetX = (xRange == 0f) ? 0f : Random.Range(-xRange, xRange);
         Vector3 spawnPos = transform.position + new Vector3(offsetX, 0f, 0f);
         lastSpawned = Instantiate(spawnPrefab, spawnPos, Quaternion.identity);
+
+        // Ensure the spawned object has a Rigidbody so trigger collisions fire reliably.
+        // We set it kinematic so movement via transform is still allowed.
+        if (lastSpawned.GetComponent<Rigidbody>() == null)
+        {
+            var rb = lastSpawned.AddComponent<Rigidbody>();
+            rb.isKinematic = true;
+            rb.useGravity = false;
+        }
+
+        // If spawnLayer is set, assign the spawned object and its children to that layer
+        // and ensure objects on that layer ignore collisions with each other.
+        if (spawnLayer >= 0 && spawnLayer <= 31)
+        {
+            SetLayerRecursively(lastSpawned.transform, spawnLayer);
+            if (!ignoredLayerCollisionSet)
+            {
+                Physics.IgnoreLayerCollision(spawnLayer, spawnLayer, true);
+                ignoredLayerCollisionSet = true;
+            }
+        }
+    }
+
+    void SetLayerRecursively(Transform root, int layer)
+    {
+        root.gameObject.layer = layer;
+        for (int i = 0; i < root.childCount; i++)
+        {
+            SetLayerRecursively(root.GetChild(i), layer);
+        }
     }
 }
