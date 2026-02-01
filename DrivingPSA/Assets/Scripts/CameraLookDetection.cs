@@ -7,6 +7,7 @@ public class CameraLookDetection : MonoBehaviour
     public LayerMask layerMask;
 
     private Intractable previousTarget;
+    private FirstClickState firstClickState;
 
     void Update()
     {
@@ -21,23 +22,67 @@ public class CameraLookDetection : MonoBehaviour
             // We had no previous target
             if (previousTarget == null)
             {
-                currentTarget.OnLookEnter.Invoke();
+                HandleLookEnter(currentTarget);
             }
             // We had a previous target and it's different from our current target
             else if (currentTarget.gameObject != previousTarget.gameObject)
             {
-                previousTarget.OnLookExit.Invoke();
-                currentTarget.OnLookEnter.Invoke();
+                HandleLookExit();
+                HandleLookEnter(currentTarget);
             }
 
-            previousTarget = currentTarget;
+            HandleClicking(currentTarget);
         }
 
         // Raycast hit nothing, if we had a previous target we're no longer looking at it
         else if (previousTarget != null)
         {
-            previousTarget.OnLookExit.Invoke();
-            previousTarget = null;
+            HandleLookExit();
         }
+    }
+
+    private void HandleLookEnter(Intractable currentTarget)
+    {
+        currentTarget.OnLookEnter.Invoke();
+        previousTarget = currentTarget;
+    }
+
+    private void HandleLookExit()
+    {
+        firstClickState = FirstClickState.HaveNot;
+        previousTarget.OnLookExit.Invoke();
+        previousTarget = null;
+    }
+
+    private void HandleClicking(Intractable currentTarget)
+    {
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            currentTarget.OnAnyClickPress.Invoke();
+
+            if (firstClickState == FirstClickState.HaveNot)
+            {
+                firstClickState = FirstClickState.CurrentlyPressed;
+                currentTarget.OnFirstClickPress.Invoke();
+            }
+        }
+
+        if (Mouse.current.leftButton.wasReleasedThisFrame)
+        {
+            currentTarget.OnAnyClickRelease.Invoke();
+
+            if (firstClickState == FirstClickState.CurrentlyPressed)
+            {
+                firstClickState = FirstClickState.HaveReleased;
+                currentTarget.OnFirstClickRelease.Invoke();
+            }
+        }
+    }
+
+    enum FirstClickState
+    {
+        HaveNot,
+        CurrentlyPressed,
+        HaveReleased,
     }
 }
